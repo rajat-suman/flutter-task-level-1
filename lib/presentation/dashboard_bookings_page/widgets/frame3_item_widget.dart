@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 import '../models/frame3_item_model.dart';
 import '../controller/dashboard_bookings_controller.dart';
 import 'package:rajat_s_application1/widgets/custom_icon_button.dart';
@@ -72,44 +74,49 @@ class Frame3ItemWidget extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15.v),
-              SizedBox(
-                width: 145.h,
-                child: Obx(
-                  () => Text(
-                    frame3ItemModelObj.drLeaLeicht!.value,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.titleMedium,
-                  ),
+              Obx(
+                    () => Text(
+                  frame3ItemModelObj.drLeaLeicht!.value,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
+                  style: theme.textTheme.titleMedium,
                 ),
               ),
               SizedBox(height: 4.v),
               Obx(
                 () => Text(
                   frame3ItemModelObj.headOfCardiac!.value,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.center,
                   style: CustomTextStyles.bodyMedium15,
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CustomImageView(
-                    imagePath: ImageConstant.imgSignal,
-                    height: 14.adaptSize,
-                    width: 14.adaptSize,
-                    margin: EdgeInsets.only(bottom: 3.v),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 6.h),
-                    child: Obx(
-                      () => Text(
-                        frame3ItemModelObj.fortyEight!.value,
-                        style: CustomTextStyles.bodyMedium15,
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomImageView(
+                        imagePath: ImageConstant.imgSignal,
+                        height: 14.adaptSize,
+                        width: 14.adaptSize,
+                        margin: EdgeInsets.only(bottom: 3.v),
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 6.h),
+                        child: Obx(
+                          () => Text(
+                            frame3ItemModelObj.fortyEight!.value,
+                            style: CustomTextStyles.bodyMedium15,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ],
           ),

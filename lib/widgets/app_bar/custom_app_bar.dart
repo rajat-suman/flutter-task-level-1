@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.centerTitle,
     this.actions,
+    this.bottom,
   }) : super(
           key: key,
         );
@@ -26,10 +27,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool? centerTitle;
 
   final List<Widget>? actions;
+  final PreferredSize? bottom;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+
       elevation: 0,
       toolbarHeight: height ?? 56.v,
       automaticallyImplyLeading: false,
@@ -40,6 +43,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 0,
       centerTitle: centerTitle ?? false,
       actions: actions,
+      bottom: bottom,
     );
   }
 

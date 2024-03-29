@@ -339,7 +339,7 @@ class _DashboardBookingsPageState extends State<DashboardBookingsPage> {
   /// Section Widget
   Widget _buildBestRatedDoctors() {
     return SizedBox(
-        height: 240.v,
+        height: 245.v,
         child: Obx(() => ListView.separated(
             padding: EdgeInsets.only(left: 16.h),
             scrollDirection: Axis.horizontal,
@@ -347,11 +347,13 @@ class _DashboardBookingsPageState extends State<DashboardBookingsPage> {
               return SizedBox(width: 16.h);
             },
             itemCount: controller
-                .DashboardBookingsModelObj.value.frame4ItemList.value.length,
+                .DashboardBookingsModelObj.value.frame3ItemList2.value.length,
             itemBuilder: (context, index) {
-              Frame4ItemModel model = controller
-                  .DashboardBookingsModelObj.value.frame4ItemList.value[index];
-              return Frame4ItemWidget(model);
+              Frame3ItemModel model = controller
+                  .DashboardBookingsModelObj.value.frame3ItemList2.value[index];
+              return Frame3ItemWidget(model, onTapComponent: () {
+                onTapComponent();
+              });
             })));
   }
 

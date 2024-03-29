@@ -1,13 +1,14 @@
-import 'widgets/profileone_item_widget.dart';
-import 'models/profileone_item_model.dart';
-import 'package:rajat_s_application1/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:rajat_s_application1/core/app_export.dart';
+import 'package:rajat_s_application1/widgets/custom_elevated_button.dart';
+
 import 'controller/profile_one_controller.dart';
 import 'models/profile_one_model.dart';
+import 'models/profileone_item_model.dart';
+import 'widgets/profileone_item_widget.dart';
 
 class ProfileOnePage extends StatefulWidget {
-   ProfileOnePage({Key? key})
+  ProfileOnePage({Key? key})
       : super(
           key: key,
         );
@@ -22,21 +23,20 @@ class _ProfileOnePageState extends State<ProfileOnePage> {
 
   @override
   Widget build(BuildContext context) {
-
-  return  SizedBox(
+    return SizedBox(
         width: SizeUtils.width,
-        child: Padding(
-            padding: EdgeInsets.only(bottom: 5.v),
-            child: Column(children: [
-              SizedBox(height: 32.v),
-              Column(
-                children: [
+        child: Flex(direction: Axis.vertical, children: [
+          Expanded(
+            child: Padding(
+                padding: EdgeInsets.only(bottom: 5.v),
+                child: ListView(children: [
+                  SizedBox(height: 32.v),
                   _buildProfileOne(),
-                  SizedBox(height: 350.v),
+                  SizedBox(height: 250.v),
                   _buildBookClass(),
-                ],
-              ),
-            ])));
+                ])),
+          )
+        ]));
   }
 
   /// Section Widget
@@ -53,14 +53,11 @@ class _ProfileOnePageState extends State<ProfileOnePage> {
             height: 16.v,
           );
         },
-        itemCount: controller.ProfileOneModelObj.value
-            .profileoneItemList.value.length,
+        itemCount:
+            controller.ProfileOneModelObj.value.profileoneItemList.value.length,
         itemBuilder: (context, index) {
           ProfileOneItemModel model = controller
-              .ProfileOneModelObj
-              .value
-              .profileoneItemList
-              .value[index];
+              .ProfileOneModelObj.value.profileoneItemList.value[index];
           return ProfileOneItemWidget(
             model,
           );

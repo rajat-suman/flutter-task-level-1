@@ -74,19 +74,28 @@ class DashboardBookingsModel {
         headOfCardiac: "Head of cardiac surgery".obs,
         fortyEight: "4.8".obs)
   ]);
-
-  Rx<List<Frame4ItemModel>> frame4ItemList = Rx([
-    Frame4ItemModel(
+  Rx<List<Frame3ItemModel>> frame3ItemList2 = Rx([
+    Frame3ItemModel(
+        circleImage: ImageConstant.imgEllipse84100x100.obs,
         drLeaLeicht: "Dr. Lea Leicht".obs,
         headOfCardiac: "Head of cardiac surgery".obs,
         fortyEight: "4.8".obs),
-    Frame4ItemModel(
+    Frame3ItemModel(
+        circleImage: ImageConstant.imgEllipse84100x100.obs,
         drLeaLeicht: "Dr. Lea Leicht".obs,
         headOfCardiac: "Head of cardiac surgery".obs,
         fortyEight: "4.8".obs),
-    Frame4ItemModel(
+    Frame3ItemModel(
+        circleImage: ImageConstant.imgEllipse84100x100.obs,
+        drLeaLeicht: "Dr. Lea Leicht".obs,
+        headOfCardiac: "Head of cardiac surgery".obs,
+        fortyEight: "4.8".obs),
+    Frame3ItemModel(
+        circleImage: ImageConstant.imgEllipse84100x100.obs,
         drLeaLeicht: "Dr. Lea Leicht".obs,
         headOfCardiac: "Head of cardiac surgery".obs,
         fortyEight: "4.8".obs)
   ]);
+
+
 }

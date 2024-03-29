@@ -1,7 +1,8 @@
-import '../models/frame_item_model.dart';
-import '../controller/dashboard_bookings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:rajat_s_application1/core/app_export.dart';
+
+import '../controller/dashboard_bookings_controller.dart';
+import '../models/frame_item_model.dart';
 
 // ignore: must_be_immutable
 class FrameItemWidget extends StatelessWidget {
@@ -28,7 +29,7 @@ class FrameItemWidget extends StatelessWidget {
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Obx(
@@ -124,44 +125,33 @@ class FrameItemWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  height: 53.v,
-                  width: 167.h,
-                  margin: EdgeInsets.only(
-                    left: 16.h,
-                    top: 11.v,
-                    bottom: 11.v,
-                  ),
-                  child: Stack(
-                    alignment: Alignment.center,
+                Padding(
+                  padding: EdgeInsets.only(left: 10.h),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomImageView(
-                        imagePath: ImageConstant.imgThumbsUp,
-                        height: 14.adaptSize,
-                        width: 14.adaptSize,
-                        alignment: Alignment.bottomLeft,
-                        margin: EdgeInsets.only(bottom: 1.v),
+                      Obx(
+                        () => Text(
+                          frameItemModelObj.drEmiliaWeininger!.value,
+                          style: theme.textTheme.titleMedium,
+                        ),
                       ),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                      SizedBox(height: 5.v),
+                      Obx(
+                        () => Row(
                           children: [
-                            Obx(
-                              () => Text(
-                                frameItemModelObj.drEmiliaWeininger!.value,
-                                style: theme.textTheme.titleMedium,
-                              ),
+                            CustomImageView(
+                              imagePath: ImageConstant.imgThumbsUp,
+                              height: 14.adaptSize,
+                              width: 14.adaptSize,
+                              alignment: Alignment.bottomLeft,
+                              margin: EdgeInsets.only(bottom: 1.v),
                             ),
-                            SizedBox(height: 5.v),
                             Padding(
-                              padding: EdgeInsets.only(left: 18.h),
-                              child: Obx(
-                                () => Text(
-                                  frameItemModelObj.internalMedicine!.value,
-                                  style: CustomTextStyles.bodyMediumGray60001,
-                                ),
+                              padding:  EdgeInsets.only(left: 8.v),
+                              child: Text(
+                                frameItemModelObj.internalMedicine!.value,
+                                style: CustomTextStyles.bodyMediumGray60001,
                               ),
                             ),
                           ],
@@ -170,6 +160,7 @@ class FrameItemWidget extends StatelessWidget {
                     ],
                   ),
                 ),
+
               ],
             ),
           ),

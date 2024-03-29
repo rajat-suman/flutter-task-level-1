@@ -32,8 +32,9 @@ class ProfileController extends GetxController with GetSingleTickerProviderState
         )),
   ];
 
+
   int selectedIndex=0;
-  late TabController controller =TabController(vsync: this, length: 3);
+  late TabController controller =TabController(vsync: this, length: myTabs.length);
 
   void onItemTapped(int index) {
     selectedIndex = index;// simulate database update while tabs change

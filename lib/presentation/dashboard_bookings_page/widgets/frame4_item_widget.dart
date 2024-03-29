@@ -83,7 +83,6 @@ class Frame4ItemWidget extends StatelessWidget {
                 imagePath: ImageConstant.imgSignal,
                 height: 14.adaptSize,
                 width: 14.adaptSize,
-                margin: EdgeInsets.only(bottom: 3.v),
               ),
               Padding(
                 padding: EdgeInsets.only(left: 6.h),

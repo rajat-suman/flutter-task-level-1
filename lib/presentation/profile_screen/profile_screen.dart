@@ -6,7 +6,6 @@ import 'package:rajat_s_application1/widgets/app_bar/appbar_subtitle_one.dart';
 import 'package:rajat_s_application1/widgets/app_bar/custom_app_bar.dart';
 import 'package:rajat_s_application1/widgets/custom_elevated_button.dart';
 import 'package:rajat_s_application1/widgets/custom_icon_button.dart';
-import 'package:readmore/readmore.dart';
 
 import '../profile_one_page/profile_one_page.dart';
 import 'controller/profile_controller.dart';
@@ -19,197 +18,63 @@ class ProfileScreen extends GetWidget<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            appBar: _buildAppBar(),
-            body: SizedBox(
-                width: SizeUtils.width,
-                child: CustomScrollView(
-                  // padding: EdgeInsets.only(top: 22.v),
-                  scrollDirection: Axis.vertical,
-                  // physics: AlwaysScrollableScrollPhysics(),
-                  //  physics: ClampingScrollPhysics(),
-                  slivers: [
-                    SliverFillRemaining(
-                      hasScrollBody: false,
-                      child: Padding(
-                          padding: EdgeInsets.only(bottom: 5.v),
-                          child: Column(children: [
-                            SizedBox(
-                                height: 130.v,
-                                width: 129.h,
-                                child: Stack(
-                                    alignment: Alignment.center,
-                                    children: [
-                                      Align(
-                                          alignment: Alignment.center,
-                                          child: SizedBox(
-                                              height: 129.adaptSize,
-                                              width: 129.adaptSize,
-                                              child: Stack(
-                                                  alignment:
-                                                      Alignment.bottomRight,
-                                                  children: [
-                                                    CustomImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgEllipse73,
-                                                        height: 129.adaptSize,
-                                                        width: 129.adaptSize,
-                                                        radius: BorderRadius
-                                                            .circular(64.h),
-                                                        alignment:
-                                                            Alignment.center),
-                                                    Padding(
-                                                        padding:
-                                                            EdgeInsets.only(
-                                                                right: 4.h),
-                                                        child: CustomIconButton(
-                                                            height:
-                                                                30.adaptSize,
-                                                            width: 30.adaptSize,
-                                                            padding:
-                                                                EdgeInsets.all(
-                                                                    5.h),
-                                                            decoration:
-                                                                IconButtonStyleHelper
-                                                                    .fillLightBlue,
-                                                            alignment: Alignment
-                                                                .bottomRight,
-                                                            child: CustomImageView(
-                                                                imagePath:
-                                                                    ImageConstant
-                                                                        .imgGroup9)))
-                                                  ]))),
-                                      Align(
-                                          alignment: Alignment.center,
-                                          child: SizedBox(
-                                              height: 130.v,
-                                              width: 128.h,
-                                              child: Stack(
-                                                  alignment:
-                                                      Alignment.bottomRight,
-                                                  children: [
-                                                    CustomImageView(
-                                                        imagePath: ImageConstant
-                                                            .imgRectangle126,
-                                                        width: 128.h,
-                                                        radius: BorderRadius
-                                                            .circular(62.h),
-                                                        alignment:
-                                                            Alignment.center),
-                                                    CustomIconButton(
-                                                        height: 36.v,
-                                                        width: 35.h,
-                                                        padding:
-                                                            EdgeInsets.all(7.h),
-                                                        decoration:
-                                                            IconButtonStyleHelper
-                                                                .fillYellowTL18,
-                                                        alignment: Alignment
-                                                            .bottomRight,
-                                                        child: CustomImageView(
-                                                            imagePath:
-                                                                ImageConstant
-                                                                    .imgGroup10))
-                                                  ])))
-                                    ])),
-                            SizedBox(height: 17.v),
-                            Text("msg_mudr_amandeep_grewal".tr,
-                                style: CustomTextStyles.titleLargeBluegray900),
-                            SizedBox(height: 3.v),
-                            SizedBox(
-                                width: 255.h,
-                                child: Text("msg_3rd_semester_ge".tr,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.center,
-                                    style: CustomTextStyles
-                                        .bodyLargePrimaryContainer)),
-                            SizedBox(height: 28.v),
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Column(children: [
-                                    Text("lbl_5_0".tr,
-                                        style: theme.textTheme.bodyLarge),
-                                    SizedBox(height: 8.v),
-                                    Text("lbl_rating".tr,
-                                        style: theme.textTheme.bodyMedium)
-                                  ]),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 21.h),
-                                      child: SizedBox(
-                                          height: 45.v,
-                                          child: VerticalDivider(
-                                              width: 1.h,
-                                              thickness: 1.v,
-                                              indent: 9.h,
-                                              endIndent: 10.h))),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 19.h),
-                                      child: Column(children: [
-                                        Text("lbl_43".tr,
-                                            style: theme.textTheme.bodyLarge),
-                                        SizedBox(height: 7.v),
-                                        Text("lbl_follower".tr,
-                                            style: theme.textTheme.bodyMedium)
-                                      ])),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 20.h),
-                                      child: SizedBox(
-                                          height: 45.v,
-                                          child: VerticalDivider(
-                                              width: 1.h,
-                                              thickness: 1.v,
-                                              indent: 9.h,
-                                              endIndent: 10.h))),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 19.h),
-                                      child: Column(children: [
-                                        Text("lbl_doctor".tr,
-                                            style: theme.textTheme.bodyLarge),
-                                        SizedBox(height: 7.v),
-                                        Text("lbl_status".tr,
-                                            style: theme.textTheme.bodyMedium)
-                                      ]))
-                                ]),
-                            SizedBox(height: 46.v),
-                            _buildProfileFollow(),
-                            SizedBox(height: 47.v),
-                            _buildCategorySwiper(),
-                            SizedBox(
-                                height: 2059.v,
-                                child: TabBarView(
-                                    controller: controller.controller,
-                                    children: [
-                                      _buildPersonTabContent(),
-                                      ProfileOnePage(),
-                                      ProfileReviewPage()
-                                    ]))
-                            /*    _buildSelectedTab()*/
-                          ])),
-                    )
-                  ],
-                ))));
+      child: Scaffold(
+        appBar: _buildAppBar(),
+        body: DefaultTabController(
+          length: 3, // Adjust the length according to the number of tabs
+          child: NestedScrollView(
+            headerSliverBuilder:
+                (BuildContext context, bool innerBoxIsScrolled) {
+              return <Widget>[
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                      if (index == 0) {
+                        return _buildUpperPart();
+                      } else {
+                        return _buildCategorySwiper();
+                      }
+                      // This builder is called for each child in the SliverList.
+                    },
+                    childCount: 2, // Number of children in the SliverList
+                  ),
+                ),
+              ];
+            },
+            body: TabBarView(
+              controller: controller.controller,
+              children: [
+                _buildPersonTabContent(),
+                ProfileOnePage(),
+                ProfileReviewPage(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
   }
 
   /// Section Widget
   PreferredSizeWidget _buildAppBar() {
     return CustomAppBar(
-        leadingWidth: 27.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgArrowLeft,
-            margin: EdgeInsets.only(left: 16.h, top: 18.v, bottom: 18.v),
-            onTap: () {
-              onTapArrowLeft();
-            }),
-        centerTitle: true,
-        title: AppbarSubtitleOne(text: "msg_henry_hildebrandt".tr),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: CustomImageView(imagePath: ImageConstant.more),
-          )
-        ]);
+      leadingWidth: 27.h,
+      leading: AppbarLeadingImage(
+          imagePath: ImageConstant.imgArrowLeft,
+          margin: EdgeInsets.only(left: 16.h, top: 18.v, bottom: 18.v),
+          onTap: () {
+            onTapArrowLeft();
+          }),
+      centerTitle: true,
+      title: AppbarSubtitleOne(text: "msg_henry_hildebrandt".tr),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 15.0),
+          child: CustomImageView(imagePath: ImageConstant.more),
+        )
+      ],
+    );
   }
 
   /// Section Widget
@@ -242,6 +107,115 @@ class ProfileScreen extends GetWidget<ProfileController> {
             children: [_buildFollow(), _buildGetInTouch()]));
   }
 
+  Widget _buildUpperPart() {
+    return Column(
+      children: [
+        SizedBox(
+            height: 130.v,
+            width: 129.h,
+            child: Stack(alignment: Alignment.center, children: [
+              Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                      height: 129.adaptSize,
+                      width: 129.adaptSize,
+                      child: Stack(alignment: Alignment.bottomRight, children: [
+                        CustomImageView(
+                            imagePath: ImageConstant.imgEllipse73,
+                            height: 129.adaptSize,
+                            width: 129.adaptSize,
+                            radius: BorderRadius.circular(64.h),
+                            alignment: Alignment.center),
+                        Padding(
+                            padding: EdgeInsets.only(right: 4.h),
+                            child: CustomIconButton(
+                                height: 30.adaptSize,
+                                width: 30.adaptSize,
+                                padding: EdgeInsets.all(5.h),
+                                decoration: IconButtonStyleHelper.fillLightBlue,
+                                alignment: Alignment.bottomRight,
+                                child: CustomImageView(
+                                    imagePath: ImageConstant.imgGroup9)))
+                      ]))),
+              Align(
+                  alignment: Alignment.center,
+                  child: SizedBox(
+                      height: 130.v,
+                      width: 128.h,
+                      child: Stack(alignment: Alignment.bottomRight, children: [
+                        CustomImageView(
+                            imagePath: ImageConstant.imgRectangle126,
+                            width: 128.h,
+                            radius: BorderRadius.circular(62.h),
+                            alignment: Alignment.center),
+                        CustomIconButton(
+                            height: 36.v,
+                            width: 35.h,
+                            padding: EdgeInsets.all(7.h),
+                            decoration: IconButtonStyleHelper.fillYellowTL18,
+                            alignment: Alignment.bottomRight,
+                            child: CustomImageView(
+                                imagePath: ImageConstant.imgGroup10))
+                      ])))
+            ])),
+        SizedBox(height: 17.v),
+        Text("msg_mudr_amandeep_grewal".tr,
+            style: CustomTextStyles.titleLargeBluegray900),
+        SizedBox(height: 3.v),
+        SizedBox(
+            width: 255.h,
+            child: Text("msg_3rd_semester_ge".tr,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
+                style: CustomTextStyles.bodyLargePrimaryContainer)),
+        SizedBox(height: 28.v),
+        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Column(children: [
+            Text("lbl_5_0".tr, style: theme.textTheme.bodyLarge),
+            SizedBox(height: 8.v),
+            Text("lbl_rating".tr, style: theme.textTheme.bodyMedium)
+          ]),
+          Padding(
+              padding: EdgeInsets.only(left: 21.h),
+              child: SizedBox(
+                  height: 45.v,
+                  child: VerticalDivider(
+                      width: 1.h,
+                      thickness: 1.v,
+                      indent: 9.h,
+                      endIndent: 10.h))),
+          Padding(
+              padding: EdgeInsets.only(left: 19.h),
+              child: Column(children: [
+                Text("lbl_43".tr, style: theme.textTheme.bodyLarge),
+                SizedBox(height: 7.v),
+                Text("lbl_follower".tr, style: theme.textTheme.bodyMedium)
+              ])),
+          Padding(
+              padding: EdgeInsets.only(left: 20.h),
+              child: SizedBox(
+                  height: 45.v,
+                  child: VerticalDivider(
+                      width: 1.h,
+                      thickness: 1.v,
+                      indent: 9.h,
+                      endIndent: 10.h))),
+          Padding(
+              padding: EdgeInsets.only(left: 19.h),
+              child: Column(children: [
+                Text("lbl_doctor".tr, style: theme.textTheme.bodyLarge),
+                SizedBox(height: 7.v),
+                Text("lbl_status".tr, style: theme.textTheme.bodyMedium)
+              ]))
+        ]),
+        SizedBox(height: 46.v),
+        _buildProfileFollow(),
+        SizedBox(height: 47.v),
+      ],
+    );
+  }
+
   /// Section Widget
   Widget _buildCategorySwiper() {
     final ProfileController _profileController = Get.put(ProfileController());
@@ -249,24 +223,30 @@ class ProfileScreen extends GetWidget<ProfileController> {
         width: double.infinity,
         child: DefaultTabController(
           length: _profileController.myTabs.length,
-          child: TabBar(
-            controller: _profileController.controller,
-            dividerHeight: .5.h,
-            dividerColor: appTheme.gray30001,
-            tabAlignment: TabAlignment.fill,
-            unselectedLabelColor: appTheme.gray600,
-            indicatorColor: theme.colorScheme.primary,
-            labelColor: theme.colorScheme.primary,
-            labelPadding: EdgeInsets.only(top: 10.h, bottom: 10.h),
-            labelStyle: CustomTextStyles.titleMediumPrimary,
-            unselectedLabelStyle: CustomTextStyles.bodyLargeGray600,
-            tabs: _profileController.myTabs,
-            onTap: (index) {
-              _profileController.onItemTapped(index);
-            },
-          ),
+          child: _buildTabBar(),
           initialIndex: 0,
         ));
+  }
+
+  /// Section Widget
+  PreferredSizeWidget _buildTabBar() {
+    final ProfileController _profileController = Get.put(ProfileController());
+    return TabBar(
+      controller: _profileController.controller,
+      dividerHeight: .5.h,
+      dividerColor: appTheme.gray30001,
+      tabAlignment: TabAlignment.fill,
+      unselectedLabelColor: appTheme.gray600,
+      indicatorColor: theme.colorScheme.primary,
+      labelColor: theme.colorScheme.primary,
+      labelPadding: EdgeInsets.only(top: 10.h, bottom: 10.h),
+      labelStyle: CustomTextStyles.titleMediumPrimary,
+      unselectedLabelStyle: CustomTextStyles.bodyLargeGray600,
+      tabs: _profileController.myTabs,
+      onTap: (index) {
+        _profileController.onItemTapped(index);
+      },
+    );
   }
 
   /// Section Widget
@@ -306,70 +286,101 @@ class ProfileScreen extends GetWidget<ProfileController> {
   }
 
   Widget _buildPersonTabContent() {
-    return SizedBox(
-        width: SizeUtils.width,
-        child: Padding(
-            padding: EdgeInsets.only(bottom: 5.v),
-            child: Column(children: [
-              SizedBox(height: 33.v),
-              _buildFortyEight(),
-              SizedBox(height: 21.v),
-              _buildProfile(),
-              SizedBox(height: 31.v),
-              Divider(indent: 16.h, endIndent: 16.h),
-              SizedBox(height: 31.v),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                      padding: EdgeInsets.only(left: 16.h),
-                      child: Text("lbl_more_about_me".tr,
-                          style: theme.textTheme.titleLarge))),
-              SizedBox(height: 14.v),
-              SizedBox(
-                  width: 354.h,
-                  child: ReadMoreText("msg_i_am_the_head_surgeon".tr,
-                      trimLines: 7,
-                      colorClickableText: theme.colorScheme.onPrimary,
-                      trimMode: TrimMode.Line,
-                      trimCollapsedText: "lbl_read_more".tr,
-                      moreStyle: CustomTextStyles.bodyLargeBlack900,
-                      lessStyle: CustomTextStyles.bodyLargeBlack900)),
-              SizedBox(height: 31.v),
-              Divider(indent: 16.h, endIndent: 16.h),
-              SizedBox(height: 32.v),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                      padding: EdgeInsets.only(left: 16.h),
-                      child: Text("msg_experience_that".tr,
-                          style: theme.textTheme.titleLarge))),
-              SizedBox(height: 9.v),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                      width: 328.h,
-                      margin: EdgeInsets.only(left: 16.h, right: 45.h),
-                      child: Text("msg_i_can_help_students".tr,
-                          maxLines: 3,
-                          overflow: TextOverflow.ellipsis,
-                          style: theme.textTheme.bodyLarge))),
-              SizedBox(height: 30.v),
-              Divider(indent: 16.h, endIndent: 16.h),
-              SizedBox(height: 33.v),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                      padding: EdgeInsets.only(left: 16.h),
-                      child: Text("lbl_languages".tr,
-                          style: theme.textTheme.titleLarge))),
-              SizedBox(height: 13.v),
-              Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                      padding: EdgeInsets.only(left: 16.h),
-                      child: Text("lbl_english_german".tr,
-                          style: theme.textTheme.bodyLarge)))
-            ])));
+    return Flex(
+      direction: Axis.vertical,
+      children: [
+        Expanded(
+          child: Padding(
+              padding: EdgeInsets.only(bottom: 5.v),
+              child: ListView(shrinkWrap: true, children: [
+                SizedBox(height: 33.v),
+                _buildFortyEight(),
+                SizedBox(height: 21.v),
+                _buildProfile(),
+                SizedBox(height: 31.v),
+                Divider(indent: 16.h, endIndent: 16.h),
+                SizedBox(height: 31.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 16.h),
+                        child: Text("lbl_more_about_me".tr,
+                            style: theme.textTheme.titleLarge))),
+                SizedBox(height: 14.v),
+                SizedBox(
+                    width: 354.h,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 16.h, right: 45.h),
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                          text: "msg_i_am_the_head_surgeon".tr,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: Colors.black,
+                            fontSize: 13.fSize,
+                          ),
+                        ),
+                        TextSpan(
+                            text: "Read more...",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14.fSize,
+                                fontWeight: FontWeight.normal,
+                                decoration: TextDecoration.underline)),
+                      ])),
+                    )),
+                SizedBox(height: 31.v),
+                Divider(indent: 16.h, endIndent: 16.h),
+                SizedBox(height: 32.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 16.h),
+                        child: Text("msg_experience_that".tr,
+                            style: theme.textTheme.titleLarge))),
+                SizedBox(height: 9.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 16.h, right: 45.h),
+                        child: RichText(
+                          text: TextSpan(
+                              text: "msg_i_can_help_students".tr,
+                              // maxLines: 3,
+                              // overflow: TextOverflow.ellipsis,
+                              style: theme.textTheme.bodyMedium!.copyWith(
+                                color: Colors.black,
+                                fontSize: 13.fSize,
+                              )
+                              // style: theme.textTheme.bodyLarge
+                              ),
+                        ))),
+                SizedBox(height: 30.v),
+                Divider(indent: 16.h, endIndent: 16.h),
+                SizedBox(height: 33.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 16.h),
+                        child: Text("lbl_languages".tr,
+                            style: theme.textTheme.titleLarge))),
+                SizedBox(height: 13.v),
+                Align(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                        padding: EdgeInsets.only(left: 16.h, right: 45.h),
+                        child: RichText(
+                          text: TextSpan(
+                              text: "lbl_english_german".tr,
+                              style: theme.textTheme.bodyMedium!.copyWith(
+                                color: Colors.black,
+                                fontSize: 13.fSize,
+                              )),
+                        )))
+              ])),
+        )
+      ],
+    );
   }
 
   /// Navigates to the previous screen.
@@ -377,3 +388,49 @@ class ProfileScreen extends GetWidget<ProfileController> {
     Get.back();
   }
 }
+
+/*
+@override
+Widget build(BuildContext context) {
+  return SafeArea(
+      child: Scaffold(
+          appBar: _buildAppBar(),
+          body: SizedBox(
+              width: SizeUtils.width,
+              child: Column(
+                children: [
+                  // _buildUpperPart(),
+                  // _buildCategorySwiper(),
+                  Expanded(
+                    child: CustomScrollView(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      slivers: [
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Padding(
+                              padding: EdgeInsets.only(bottom: 5.v),
+                              child: Column(children: [
+                                _buildUpperPart(),
+                                _buildCategorySwiper(),
+                                Container(
+                                    height: 2062.v,
+                                    // shrinkWrap: true,
+                                    child:
+                                    TabBarView(
+                                        controller: controller.controller,
+                                        children: [
+                                          _buildPersonTabContent(),
+                                          ProfileOnePage(),
+                                          ProfileReviewPage()
+                                        ])
+                                )
+                              ])),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ))));
+}*/

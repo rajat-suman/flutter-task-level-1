@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rajat_s_application1/core/app_export.dart';
 import 'package:rajat_s_application1/presentation/profile_one_page/models/profileone_item_model.dart';
-import 'package:readmore/readmore.dart';
 
 import '../controller/profile_review_controller.dart';
 
@@ -34,10 +33,12 @@ class ProfileReviewWidget extends StatelessWidget {
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(height: 5.v),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   CustomImageView(
                     imagePath: ImageConstant.imgEllipse73,
@@ -57,15 +58,15 @@ class ProfileReviewWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Obx(
-                              () => Text(
-                                profileoneItemModelObj.fredRichard!.value,
+                          () => Text(
+                            profileoneItemModelObj.fredRichard!.value,
                             style: theme.textTheme.titleSmall,
                           ),
                         ),
                         SizedBox(height: 4.v),
                         Obx(
-                              () => Text(
-                                profileoneItemModelObj.duration!.value,
+                          () => Text(
+                            profileoneItemModelObj.duration!.value,
                             style: theme.textTheme.bodyMedium!.copyWith(
                               color: Colors.grey,
                               fontSize: 13.fSize,
@@ -76,21 +77,17 @@ class ProfileReviewWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Container(
-                    width: 29.h,
-                    margin: EdgeInsets.only(
-                      left: 129.h,
-                      top: 9.v,
-                      bottom: 13.v,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  Expanded(
+                    child:  Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Obx(
-                              () => Text(
-                                profileoneItemModelObj.four!.value,
-                            style: theme.textTheme.bodyLarge,
+                              () => Text(profileoneItemModelObj.four!.value,
+                              style: TextStyle(
+                                  color: Colors.amberAccent,
+                                  fontSize: 17.fSize,
+                                  fontWeight: FontWeight.normal)
+                            // style: theme.textTheme.bodyLarge,
                           ),
                         ),
                         CustomImageView(
@@ -104,30 +101,81 @@ class ProfileReviewWidget extends StatelessWidget {
                           ),
                         ),
                       ],
+                    )
+                  )
+
+                  /*Container(
+                    width: 29.h,
+                    margin: EdgeInsets.only(
+                      left: 129.h,
+                      top: 9.v,
+                      bottom: 13.v,
                     ),
-                  ),
+                    child: ,
+                  ),*/
                 ],
               ),
               SizedBox(height: 16.v),
-              RichText(
-                text: TextSpan(children: [
-                  TextSpan(text: "Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habitant egestas magna.Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habit.",
-                    style:   theme.textTheme.bodyMedium!.copyWith(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habitant egestas magna.Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habit.",
+                    maxLines: 4,
+                    overflow: TextOverflow.ellipsis,
+                    style: theme.textTheme.bodyMedium!.copyWith(
                       color: Colors.black,
-                      fontSize: 13.5.fSize,
+                      fontSize: 13.fSize,
                     ),
                   ),
-                  TextSpan(
-                      text: "\n\nRead more",
-                      style: theme.textTheme.titleLarge!.copyWith(
-                        color: Color(0XFF222222),
-                        fontSize: 18.fSize,
-                          decoration: TextDecoration.underline
-                      )
-                  ),
+                  SizedBox(height: 16.v),
+                  Row(
+                    children: [
+                      Text("Read more",
+                          style: theme.textTheme.titleLarge!.copyWith(
+                              color: Color(0XFF222222),
+                              fontSize: 15.fSize,
+                              decoration: TextDecoration.underline)),
 
-                ])
+                      Padding(
+                        padding:  EdgeInsets.only(left: 8.0),
+                        child: RotationTransition(
+                          turns: new AlwaysStoppedAnimation(180 / 360),
+                          child: CustomImageView(
+                            imagePath: ImageConstant.imgArrowLeft,
+                            height: 9.adaptSize,
+                            width: 9.adaptSize,
+                            margin: EdgeInsets.only(
+                              left: 4.h,
+                              top: 2.v,
+                              bottom: 4.v,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               )
+              // RichText(
+              //   text: TextSpan(children: [
+              //     TextSpan(text: "Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habitant egestas magna.Lorem ipsum dolor sit amet consectetur. Sit tortor vulputate tortor rhoncus habit.",
+              //       style:   theme.textTheme.bodyMedium!.copyWith(
+              //         color: Colors.black,
+              //         fontSize: 13.5.fSize,
+              //       ),
+              //     ),
+              //     TextSpan(
+              //         text: "\n\nRead more",
+              //         style: theme.textTheme.titleLarge!.copyWith(
+              //           color: Color(0XFF222222),
+              //           fontSize: 18.fSize,
+              //             decoration: TextDecoration.underline
+              //         )
+              //     ),
+              //
+              //   ])
+              // )
             ],
           ),
         ),

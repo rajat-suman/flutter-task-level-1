@@ -24,64 +24,70 @@ class _ProfileReviewPageState extends State<ProfileReviewPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-        padding: EdgeInsets.only(bottom: 5.v),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  left: 16.h,
-                  top: 40.v,
-                  right: 78.h,
-                ),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Flex(
+        direction: Axis.vertical,
+        children:[
+          Expanded(
+            child: Padding(
+                padding: EdgeInsets.only(bottom: 5.v),
+                child: ListView(
                   children: [
-                    Row(
-                      children: [
-                        CustomImageView(
-                          imagePath: ImageConstant.imgSignal,
-                          height: 30.adaptSize,
-                          width: 30.adaptSize,
-                          margin: EdgeInsets.only(
-                            top: 6.v,
-                            bottom: 7.v,
-                          ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          left: 16.h,
+                          top: 40.v,
+                          right: 78.h,
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 15.h),
-                          child: Text(
-                            "lbl_5_0".tr,
-                            style: theme.textTheme.displaySmall,
-                          ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Row(
+                              children: [
+                                CustomImageView(
+                                  imagePath: ImageConstant.imgSignal,
+                                  height: 30.adaptSize,
+                                  width: 30.adaptSize,
+                                  margin: EdgeInsets.only(
+                                    top: 6.v,
+                                    bottom: 7.v,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 12.h),
+                                  child: Text(
+                                    "lbl_5_0".tr,
+                                    style: TextStyle(
+                                        color: Colors.amberAccent,
+                                        fontSize: 40.fSize,
+                                        fontWeight: FontWeight
+                                            .bold) /*theme.textTheme.displaySmall*/,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 33.v),
+                            Text(
+                              "msg_what_others_have".tr,
+                              style: theme.textTheme.titleLarge,
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                    SizedBox(height: 33.v),
-                    Text(
-                      "msg_what_others_have".tr,
-                      style: theme.textTheme.titleLarge,
+                    _buildReviews(),
+                    CustomOutlinedButton(
+                      width: 358.h,
+                      text: "msg_read_all_399_reviews".tr,
+                      alignment: Alignment.bottomCenter,
                     ),
+                    _buildBookClass(),
                   ],
-                ),
-              ),
-            ),
-
-            _buildReviews(),
-
-            CustomOutlinedButton(
-              width: 358.h,
-              text: "msg_read_all_399_reviews".tr,
-              alignment: Alignment.bottomCenter,
-            ),
-
-            _buildBookClass(),
-          ],
-        )
-    );
+                )),
+          )
+        ]);
 
   }
 
@@ -124,7 +130,7 @@ class _ProfileReviewPageState extends State<ProfileReviewPage> {
   /// Section Widget
   Widget _buildBookClass() {
     return Container(
-      margin: EdgeInsets.only(top: 290.v),
+      margin: EdgeInsets.only(top: 230.v),
       padding: EdgeInsets.fromLTRB(16.h, 15.v, 16.h, 16.v),
       decoration: AppDecoration.outlineGray30001,
       child: Column(
